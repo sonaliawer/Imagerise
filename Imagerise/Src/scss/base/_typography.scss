@@ -1,0 +1,36 @@
+$web-font-path: "../assets/fonts" !default;
+
+@font-face {
+  font-family: "ProximaNova-Thin";
+  src: url('#{$web-font-path}/ProximaNova-Thin.woff2') format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+    font-family: "ProximaNova-Regular";
+    src: url('#{$web-font-path}/ProximaNova-Regular.woff2') format("woff2");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "ProximaNova-Bold";
+    src: url('#{$web-font-path}/ProximaNova-Bold.woff2') format("woff2");
+    font-display: swap;
+  }
+
+body{
+    font-family: "ProximaNova-Regular", Arial, Sans-Serif;
+}
+
+h1{
+    font-family: "ProximaNova-Thin", Arial, Sans-Serif;
+}
+
+h2{
+    font-family: "ProximaNova-Regular", Arial, Sans-Serif;
+}
+
+h3{
+    font-family: "ProximaNova-Bold", Arial, Sans-Serif;
+    @include font_size_color(18px);
+}

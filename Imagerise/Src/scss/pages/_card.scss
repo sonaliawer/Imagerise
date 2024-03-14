@@ -1,0 +1,273 @@
+.file_upload {
+  @include flex(flex, null, center, center);
+  @include width_height(100vh);
+  @include device(phone) {
+    @include width_height(auto);
+  }
+
+  &-container {
+    max-width: 660px;
+    @include width_height(null, 100%);
+    padding: 20px 15px;
+    margin: 0 auto;
+
+    @include device(sm-phone) {
+      max-width: 400px;
+      padding: 0px 30px;
+    }
+  }
+
+  &-header {
+    @include font_size_color(45px, null, $white-base);
+    padding-bottom: 54px;
+    text-align: center;
+
+    @include device(sm-phone) {
+      padding: 30px 0px 30px 0px;
+      @include font_size_color(26px);
+    }
+  }
+
+  &-body {
+    @include grid(grid);
+    place-items: center;
+    background: $black-xtralight;
+    overflow: hidden;
+    text-align: center;
+    padding: 0px 15px;
+    aspect-ratio: 16/5;
+    border-radius: 15px;
+    @include position(relative);
+    border: 1px solid transparent;
+
+    @include device(sm-phone) {
+      @include width_height(193px, 100%);
+      padding: 0px 0px;
+    }
+
+    &:hover {
+      border-color: $white-base;
+      background-color: $black-verylight;
+    }
+  }
+
+  &-img {
+    @include flex(flex, null, center, center);
+    padding-bottom: 10px;
+  }
+
+  &-icon {
+    svg {
+      @include width_height(20px, 20px);
+      margin-top: 6px;
+    }
+  }
+
+  &-text {
+    @include font_size_color(20px);
+    padding-right: 20px;
+  }
+
+  &-drag {
+    padding-top: 10px;
+    @include font_size_color(18px, null, $grey-base);
+  }
+
+  .upload {
+    @include position(absolute, null, 0, null, 0);
+    margin: 0;
+    padding: 0;
+    @include font_size_color(20px);
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    @include width_height(100%, 100%);
+  }
+
+  &-inputsearch {
+    @include width_height(45px, 100%);
+    outline: none;
+    background-color: $black-light;
+    border-radius: 5px;
+    border: none;
+    margin-top: 15px;
+    color: $white-base;
+    padding-left: 13px;
+  }
+
+  &-inputsearch {
+    &:focus {
+      background-color: $white-base;
+      color: $black-light;
+    }
+
+    &:hover {
+      color: $white-base;
+      background-color: $black-verylight;
+    }
+  }
+}
+
+.upload_type {
+  @include width_height(null, 100%);
+  @include flex(flex, null, null, center, 15px);
+  margin-top: 38px;
+
+  @include device(sm-phone) {
+    @include flex(flex, null, null, null, 12px, column);
+    margin-top: 28px;
+    @include width_height(null, 100%);
+
+    &-link {
+      @include width_height(null, 100%);
+      @include flex(flex, null, center);
+    }
+  }
+
+  &-link {
+    cursor: pointer;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+    background-color: $black-light;
+    @include flex(flex, null, center, center, 11px);
+    flex-basis: 100%;
+
+    figcaption {
+      @include font_size_color(14px);
+    }
+
+    &:hover {
+      background-color: $black-verylight;
+    }
+  }
+}
+
+.imagebox {
+  @include width_height(null, 100%);
+  background-color: $black-dark;
+  border-radius: 10px;
+  margin-top: 26px;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: all 0.3s linear;
+
+  &-show {
+    max-height: 300px;
+    margin-top: 26px;
+    padding: 25px 19px;
+    opacity: 1;
+  }
+
+  &-caption {
+    @include font_size_color(16px, 500);
+  }
+
+  &-popup {
+    margin-top: 10px;
+    @include flex(flex, null, space-between, null, 10px);
+
+    img {
+      cursor: pointer;
+      border-radius: 20px;
+    }
+  }
+
+  @include device(sm-phone) {
+    padding: 15px 20px;
+
+    &-popup {
+      @include grid(grid, null, null, repeat(2, 1fr), null, 12px);
+      place-items: center;
+    }
+
+    &-caption {
+      text-align: center;
+    }
+  }
+}
+.upload_setting {
+  @include device(sm-phone) {
+    @include width_height(null, 100%);
+    margin: 30px 0px 12px 0px;
+  }
+
+  @include flex(flex, null, flex-start, center, 12px);
+  margin: 52px 0px 16px 0px;
+
+  svg {
+    @include width_height(24px, 24px);
+  }
+
+  span {
+    @include font_size_color(30px);
+    margin-left: 11px;
+  }
+}
+
+.upscaling {
+  max-width: 100%;
+  @include width_height(null, 100%);
+  background: #151515;
+  padding: 31px 37px 29px 23px;
+  border-radius: 10px;
+  @include flex(flex, null, space-between, center);
+//   margin-bottom: 20px;
+
+  @include device(sm-phone) {
+    @include flex(null, null, center, null, 12px, column);
+    padding: 28px 17px 20px 25px;
+  }
+
+  &.upscaling-noise-hidden {
+    .upscaling-Noise {
+      display: none;
+    }
+  }
+
+  &-zoom {
+    @include flex(flex, wrap, space-between, center, 15px);
+
+    @include device(sm-phone) {
+      @include width_height(null, 100%);
+      @include flex(flex, wrap, space-between, center, 15px);
+    }
+
+    &-form {
+      @include flex(flex, null, space-between, center, 15px);
+
+      @include device(sm-phone) {
+        @include flex(flex, wrap, space-between, center, 15px);
+      }
+    }
+  }
+
+  &-title {
+    @include font_size_color(18px, 700);
+  }
+
+  &-Noise {
+    @include flex(flex, null, null, null, 12px);
+
+    @include device(sm-phone) {
+      @include width_height(null, 100%);
+      margin-top: 26px;
+    }
+  }
+}
+
+.right_reserved {
+  p {
+    @include font_size_color(16px, null, $grey-light);
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  @include device(sm-phone) {
+    p {
+      display: none;
+    }
+  }
+}

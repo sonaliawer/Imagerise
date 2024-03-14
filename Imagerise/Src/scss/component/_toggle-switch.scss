@@ -1,0 +1,47 @@
+.image-enhancer-settings {
+  .switch {
+    @include position(relative);
+    display: inline-block;
+    @include width_height (22px,40px);
+    input {
+      opacity: 0;
+      @include width_height (0,0);
+    }
+  }
+
+  .slider {
+    @include position(absolute,0,0,0,0);
+    cursor: pointer;
+    background: rgba($color: $white-base, $alpha: 0.7);
+    transition: .4s;
+    &.round {
+      border-radius: 34px;
+      &:before {
+        border-radius: 50%;
+      }
+    }
+    &:before {
+      @include position(absolute,4px,null,4px);
+      content: "";
+      @include width_height (15px,15px);
+      background-color: $white-base;
+      transition: .4s;
+    }
+  }
+
+  input{
+    &:checked {
+        + .slider {
+        background-color: $blue-base;
+        &:before {
+          transform: translateX(17px);
+        }
+      }
+    }
+    &:focus {
+        + .slider {
+        box-shadow: 0 0 1px $blue-base;
+      }
+    }
+  }
+}

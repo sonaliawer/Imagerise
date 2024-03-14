@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Enhancer Tool</title>
+    <link rel="stylesheet" href="./scss/main.css">
+</head>
+
+<body>
+    <main class="file_upload">
+        <section class="file_upload-container">
+            <h1 class="file_upload-header">Image Enhancer Tool </h1>
+
+            <div class="file_upload-body transition">
+                <div class="file_upload-content">
+                    <div class="file_upload-img">
+                        <span class="file_upload-text">Click to Upload</span>
+                        <div class="file_upload-icon">
+                            <svg>
+                                <use xlink:href="./assets/icons/icons.svg#upload-icon"></use>
+                            </svg>
+                        </div>
+                    </div>
+                    <p class="file_upload-drag">or, drag and drop your images here</p>
+                </div>
+                <span id="upload-btn" class="upload-btn upload"></span>
+            </div>
+
+            <input type="text" class="file_upload-inputsearch transition" placeholder="Paste Your Link Here.....">
+
+            <div class="upload_type">
+                <figure class="upload_type-link transition">
+                    <img src="assets/images/google-drive.png" alt="google Drive">
+                    <figcaption>Google Drive</figcaption>
+                </figure>
+                <figure class="upload_type-link transition">
+                    <img src="./assets/images/google-photos.png" alt="google Drive">
+                    <figcaption>Google Photos</figcaption>
+                </figure>
+                <figure class="upload_type-link transition">
+                    <img src="./assets/images/gallery.png" alt="google Drive">
+                    <figcaption>Try Sample!</figcaption>
+                </figure>
+            </div>
+
+            <figure class="imagebox">
+                <figcaption class="imagebox-caption">Sample Images</figcaption>
+                <figure class="imagebox-popup">
+                    <img src="./assets/images/Sample001.png" alt="sample001" class="upload-btn">
+                    <img src="./assets/images/Sample002.png" alt="sample002" class="upload-btn">
+                    <img src="./assets/images/Sample003.png" alt="sample003" class="upload-btn">
+                    <img src="./assets/images/Sample004.png" alt="sample004" class="upload-btn">
+                    <img src="./assets/images/Sample005.png" alt="sample005" class="upload-btn">
+                </figure>
+            </figure>
+
+            <h2 class="upload_setting">
+                <svg>
+                    <use xlink:href="./assets/icons/icons.svg#settings"></use>
+                </svg>
+                <span>Setting</span>
+            </h2>
+
+            <div class="upscaling upscaling-noise-hidden" id="upscalingOption">
+                <div class="upscaling-zoom image-enhancer-settings">
+                    <span>Upscaling</span>                    
+                    <div class="upscaling-zoom-form">
+                        <label class="form-control">
+                            <input type="radio" name="scaling" value="Original" id="scalingOrg" />
+                            Original
+                        </label>
+                        <label class="form-control">
+                            <input type="radio" name="scaling" value="2x" id="scaling2x" checked />
+                            2x
+                        </label>
+                        <label class="form-control">
+                            <input type="radio" name="scaling" value="4x" id="scaling4x" />
+                            4x
+                        </label>
+                    </div>
+                </div>
+                <div class="upscaling-Noise image-enhancer-settings ">
+                    <span>Noise Reduction</span>
+                    <label class="switch">
+                        <input type="checkbox" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="right_reserved">
+                <p>© 2023 Sonali </p>
+            </div>
+        </section>
+
+        <!-- Form modal -->
+        <!-- <section class="contact-form">
+            <form action="#">
+                <div class="contact-form-close">
+                    <svg>
+                        <use xlink:href="./assets/icons/icons.svg#cancel"></use>
+                    </svg>
+                </div>
+                <label for="fname">First name*</label>
+                <input type="text" name="fname">
+                <label for="lname">Email*</label>
+                <input type="text" name="email">
+                <label for="lname">Contact Number</label>
+                <input type="text" name="number">
+                <label for="lname">Message*</label>
+                <input type="text" name="message">
+                <button value="submit">Submit</button>
+            </form> 
+          </section> -->
+    </main>
+    <script src="./js/main.js"></script>
+    <script src="./js/modal.js"></script>
+</body>
+
+</html>

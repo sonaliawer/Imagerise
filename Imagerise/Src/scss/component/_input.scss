@@ -1,0 +1,57 @@
+.contact-form{
+
+    form{
+            @include width_height(100%, 100%);
+            background: $black-regular;
+            color:$white-base;
+            padding:60px;
+            min-width: 660px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+    label{
+        display: block;
+        width:100%;
+        margin-bottom: 8px;
+        font-size: 14px;
+    }
+    input{
+        display: block;
+        margin-bottom: 20px;
+        @include width_height(45px,100%);
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid $grey-light;
+        padding-left: 10px;
+        font-family: ProximaNova-Regular;
+        font-size:16px;
+    }
+    button{
+        background: $blue-base;
+        border-radius: 5px;
+        border: none;
+        font-size: 14px;
+        padding: 13px 25px;
+        width:150px;
+        cursor: pointer;
+        font-family: ProximaNova-Bold;
+        margin-top: 10px;
+        &:hover {
+            background: rgba($color: $blue-base, $alpha: 0.8);
+        }
+    }
+
+    &-close{
+        // @include position(absolute,0,20px,0,20px);
+        position: absolute;
+        top:20px;
+        right:20px;
+        cursor: pointer;
+        svg{
+            width:20px;
+            height:20px
+        }
+    }
+
+}

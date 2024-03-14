@@ -1,0 +1,25 @@
+/* The loading Class */
+.loading {
+    @include position(relative);
+    background: $black-regular;
+    border-radius: 10px;
+    &:after {
+        content: "";
+        display: block;
+        @include position(absolute);
+        @include width_height (100%,100%);
+        border-radius: 10px;
+        transform: translateX(-100%);                                        
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0) -21.95%, rgba(134, 134, 134, 0.381971) 36.38%, rgba(103, 103, 103, 0) 84.15%);
+
+        /* Adding animation */
+        animation: loading 1.5s infinite;
+    }
+}
+
+/* Loading Animation */
+@keyframes loading {
+    100% {
+        transform: translateX(100%);
+    }
+}
